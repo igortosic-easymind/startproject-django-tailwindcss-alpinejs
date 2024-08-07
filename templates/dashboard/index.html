@@ -1,0 +1,11 @@
+{% extends "base_dashboard.html" %}
+
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<h1 class="text-2xl font-bold text-gray-900">Coming soon...</h1>
+  {% else %}
+<h1>You are not authorized</h1>
+{% endif %}
+  
+{% endblock %}

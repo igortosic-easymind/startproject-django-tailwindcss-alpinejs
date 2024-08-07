@@ -1,0 +1,22 @@
+{% extends "base_dashboard.html" %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<div class="md:flex md:items-center md:justify-between">
+	<div class="min-w-0 flex-1">
+	  <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Update/edit the form</h2>
+	</div>
+  </div>
+<div class="relative">
+	<div class="absolute inset-0 flex items-center" aria-hidden="true">
+	  <div class="w-full border-t border-gray-300"></div>
+	</div>
+	<div class="relative flex justify-center">
+	  <span class="bg-white px-2 text-sm text-gray-500">update client</span>
+	</div>
+  </div>
+  {% include "components/_add_edit_form.html" %}
+  {% else %}
+<h1>You are not authorized</h1>
+{% endif %}
+{% endblock %}
