@@ -12,6 +12,7 @@ The starter template provides a robust foundation for building modern web applic
 - **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
 - **Alpine.js**: A minimal JavaScript framework for composing behavior directly in your HTML.
 - **Client App**: An example Django app named `client`, showcasing a basic model and how to integrate the frontend technologies.
+- **Client CRUD App**: The Client App includes a fully featured CRUD interface for managing clients. You can create, read, update, and delete client records. The application templates are built using Alpine.js and styled with Tailwind CSS for a modern and responsive user experience.
 
 ### Example Model in Client App
 
