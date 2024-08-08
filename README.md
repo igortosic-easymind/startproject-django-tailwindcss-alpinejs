@@ -54,14 +54,19 @@ cd easymind-startproject-django-tailwindcss-alpinejs
 Using pyenv to set up a virtual environment ensures that the project dependencies are isolated from your global Python environment.
 
 ```bash
-pyenv exec python -m venv .venv
+pyenv exec python3 -m venv .venv
 ```
 
 3. Activate the Virtual Environment
 Activate the virtual environment to start using it. This step is crucial before installing dependencies and running the project.
 
+For macOS and Linux:
 ```bash
 source .venv/bin/activate
+```
+For Windows:
+```bash
+.venv\Scripts\activate
 ```
 
 4. Install Python Dependencies
@@ -71,28 +76,36 @@ Install all required Python packages listed in requirements.txt.
 pip3 install -r requirements.txt
 ```
 
-5. Install JavaScript Dependencies
+5. After cloning the repository, you need to create a superuser for your database. This is necessary to access the Django admin interface and manage your application.
+
+To create a superuser, run the following command:
+
+```bash
+python3 manage.py createsuperuser
+```
+
+6. Install JavaScript Dependencies
 Install the required Node.js packages.
 
 ```bash
 npm install
 ```
 
-6. Build JavaScript Assets
+7. Build JavaScript Assets
 Build the project’s JavaScript assets using npm.
 
 ```bash
 npm run build
 ```
 
-7. Collect Static Files
+8. Collect Static Files
 Collect all static files into the directory specified in your Django settings. This is necessary for serving static assets.
 
 ```bash
 python3 manage.py collectstatic
 ```
 
-8. Run the Development Server
+9. Run the Development Server
 Start the Django development server. This will allow you to view the project in your web browser at http://127.0.0.1:8000/.
 
 ```bash
