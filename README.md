@@ -6,6 +6,17 @@ This project is a starter template designed to streamline the development of Dja
 
 The starter template provides a robust foundation for building modern web applications using Django, Tailwind CSS, and Alpine.js. The template aims to simplify the initial setup and configuration, allowing developers to focus on building their application's unique features.
 
+## Demo Project
+
+A live demo of the project is available at [https://startproject-django-demo.onrender.com/](https://startproject-django-demo.onrender.com/).
+
+### Demo Credentials
+- **Username:** testuser
+- **Password:** demo1234
+
+### Note
+The project is hosted on a free instance web service on Render. As a result, it may be idle sometimes, causing the initial load to be slow. However, once the application is loaded, it should work normally.
+
 ### Features
 
 - **Django**: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
