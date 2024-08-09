@@ -8,7 +8,7 @@ The starter template provides a robust foundation for building modern web applic
 
 ## Demo Project
 
-A live demo of the project is available at [https://startproject-django-demo.onrender.com/](https://startproject-django-demo.onrender.com/).
+A live demo of the project is available at [https://startproject-django-demo.onrender.com/](https://startproject-django-demo.onrender.com/){:target="_blank"}.
 
 ### Demo Credentials
 - **Username:** testuser
@@ -165,4 +165,4 @@ License
 This project is licensed under the free License. See the LICENSE file for more details.
 
 Contact
-If you have any questions or need further assistance, feel free to contact [easymindstudio.com](https://easymindstudio.com) at [info@easymindstudio.com](mailto:info@easymindstudio.com).
+If you have any questions or need further assistance, feel free to contact [easymindstudio.com](https://easymindstudio.com){:target="_blank"} at [info@easymindstudio.com](mailto:info@easymindstudio.com).
