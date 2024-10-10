@@ -1,0 +1,106 @@
+{% extends "base_dashboard.html" %}
+
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<div>
+{% include "../components/_deleteModal.html" %} 
+    <div x-data="{ activeTab: 'tab1' }" class="block mt-8">
+      <nav class="isolate flex divide-x divide-gray-200 rounded-lg shadow" aria-label="Tabs">
+        <!-- Current: "text-gray-900", Default: "text-gray-500 hover:text-gray-700" -->
+        <button  @click="activeTab = 'tab1'" class="group relative min-w-0 flex-1 overflow-hidden rounded-l-lg bg-white px-4 py-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-50 focus:z-10" aria-current="page">
+          <span>Info about client</span>
+          <span aria-hidden="true" :class="{ 'absolute inset-x-0 bottom-0 h-0.5 bg-indigo-500': activeTab === 'tab1', 'absolute inset-x-0 bottom-0 h-0.5 bg-transparent': activeTab !== 'tab1' }"></span>
+        </button>
+        <button @click="activeTab = 'tab2'" class="group relative min-w-0 flex-1 overflow-hidden bg-white px-4 py-4 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 focus:z-10">
+          <span>Actions</span>
+          <span aria-hidden="true" :class="{ 'absolute inset-x-0 bottom-0 h-0.5 bg-indigo-500': activeTab === 'tab2', 'absolute inset-x-0 bottom-0 h-0.5 bg-transparent': activeTab !== 'tab2' }"></span>
+        </a>
+        <button @click="activeTab = 'tab3'" class="group relative min-w-0 flex-1 overflow-hidden bg-white px-4 py-4 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 focus:z-10">
+          <span>Opportunities</span>
+          <span aria-hidden="true" :class="{ 'absolute inset-x-0 bottom-0 h-0.5 bg-indigo-500': activeTab === 'tab3', 'absolute inset-x-0 bottom-0 h-0.5 bg-transparent': activeTab !== 'tab3' }"></span>
+        </button>
+
+      </nav>
+      <div x-show="activeTab === 'tab1'" class="overflow-hidden bg-white shadow sm:rounded-lg">
+        <div class="border-t border-gray-100">
+          <dl class="divide-y divide-gray-100">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.company_name|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.company_name}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.first_name|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.first_name}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.last_name|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.last_name}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.position|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.position}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.phone|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.phone}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.email|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.email}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.website|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.website}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.address|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.address}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.city|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.city}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.state|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.state}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.zipcode|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.zipcode}}</dd>
+            </div>
+        </div>
+      </div>
+      <div x-show="activeTab === 'tab2'" class="overflow-hidden bg-white shadow sm:rounded-lg">
+        <div class="border-t border-gray-100">
+          <dl class="divide-y divide-gray-100">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.follow_up_action|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.follow_up_action|default_if_none:''}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-900">{{field_labels.date_of_next_contact|capfirst}}</dt>
+              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.date_of_next_contact|default_if_none:''}}</dd>
+            </div>
+        </div>
+      </div>
+        <div x-show="activeTab === 'tab3'" class="overflow-hidden bg-white shadow sm:rounded-lg">
+          <div class="border-t border-gray-100">
+            <dl class="divide-y divide-gray-100">
+              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-900">{{field_labels.new_business|capfirst}}</dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.new_business|default_if_none:''}}</dd>
+              </div>
+              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-900">{{field_labels.recommendation|capfirst}}</dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{client.recommendation|default_if_none:''}}</dd>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  {% else %}
+<h1>You are not authorized</h1>
+{% endif %}
+  
+{% endblock %}

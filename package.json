@@ -1,0 +1,25 @@
+{
+  "name": "crm-easymind-render",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "postcss static/css/app.css -o static/dist/app.css",
+    "watch:css": "postcss static/css/app.css -o static/css/app.css --watch",
+    "build:js": "NODE_ENV=production node build.js",
+    "watch:js": "NODE_ENV=development node watch.js",
+    "build": "npm run build:css && npm run build:js",
+    "watch": "npm run watch:css & npm run watch:js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alpinejs": "^3.14.1",
+    "autoprefixer": "^10.4.19",
+    "esbuild": "^0.23.0",
+    "postcss": "^8.4.39",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.4"
+  }
+}
